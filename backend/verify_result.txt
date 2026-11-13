@@ -1,0 +1,7 @@
+🚀 Starting Socket Verification V2...
+✅ Owner Connected: HVpDEOQ4RWRnLOlAAAAC
+✅ User Connected: gp41ZU9Yfx3urRKSAAAD
+📤 User sending status update...
+🎉 VERIFIED: Owner received customer status!
+   Data: {"salonId":"67727c6e3b5e1b1234567890","message":"Testing Message","userId":"test_user"}
+🏁 SUCCESS

@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "project_number": "653960396592",
+    "project_id": "salon-bf846",
+    "storage_bucket": "salon-bf846.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653960396592:android:c334145c4093f95bb0d2f5",
+        "android_client_info": {
+          "package_name": "Salon.Mahaveer.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653960396592-3sprn19lhtg8ajlgj860mvgu9jed93o1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Salon.Mahaveer.com",
+            "certificate_hash": "6ea8a5aa5993ca8a89e14709537035321f2d250e"
+          }
+        },
+        {
+          "client_id": "653960396592-gpfdlsbndni0eoim09edomj4elcqi83r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Salon.Mahaveer.com",
+            "certificate_hash": "2b1a7f8139bf20fb312bde4b67296d8d20d882ae"
+          }
+        },
+        {
+          "client_id": "653960396592-sk154vimkf31emp1t0ic5csvdk9g1ia5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZWiYCPHOyfCjIN2cx9HLCmLI5PEN8k04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653960396592-sk154vimkf31emp1t0ic5csvdk9g1ia5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653960396592:android:16fb647efa1f9f0ab0d2f5",
+        "android_client_info": {
+          "package_name": "com.stylq.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653960396592-7ucpj5c3vae5s20vesduidop43cjm101.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stylq.app",
+            "certificate_hash": "2b1a7f8139bf20fb312bde4b67296d8d20d882ae"
+          }
+        },
+        {
+          "client_id": "653960396592-tc97u987t5p4qlt4miaupjpr6ogjgmgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stylq.app",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "653960396592-trqa3doqguh0kfgnqmultnk531riolqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stylq.app",
+            "certificate_hash": "6ea8a5aa5993ca8a89e14709537035321f2d250e"
+          }
+        },
+        {
+          "client_id": "653960396592-sk154vimkf31emp1t0ic5csvdk9g1ia5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZWiYCPHOyfCjIN2cx9HLCmLI5PEN8k04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653960396592-sk154vimkf31emp1t0ic5csvdk9g1ia5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

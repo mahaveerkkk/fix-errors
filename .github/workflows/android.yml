@@ -1,0 +1,82 @@
+name: Build Android Release (APK & AAB for Play Store)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: Build Signed Release APK & Play Store AAB
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install NPM Dependencies
+        run: |
+          npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+
+      - name: Verify Android Release Keystore & Google Services
+        run: |
+          echo "Checking essential Android release files..."
+          if [ ! -f "android/app/google-services.json" ]; then
+            echo "ERROR: android/app/google-services.json not found in repository!"
+            exit 1
+          fi
+          if [ ! -f "android/app/my-release-key.jks" ]; then
+            echo "ERROR: android/app/my-release-key.jks not found in repository!"
+            exit 1
+          fi
+          echo "All required release files are present."
+
+      - name: Make Gradle Executable
+        run: chmod +x android/gradlew
+
+      - name: Build Signed APK & Play Store AAB Bundle
+        working-directory: android
+        run: |
+          ./gradlew clean assembleRelease bundleRelease --no-daemon --stacktrace
+
+      - name: Locate Generated Release Files
+        run: |
+          echo "Looking for generated Release APKs..."
+          find android/app/build/outputs/apk/release/ -type f -name "*.apk"
+          echo "Looking for generated Release AAB Bundles..."
+          find android/app/build/outputs/bundle/release/ -type f -name "*.aab"
+
+      - name: Upload Release APK (Direct Mobile Testing)
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-salon-release-apk
+          path: android/app/build/outputs/apk/release/*.apk
+          retention-days: 14
+
+      - name: Upload Play Store Release AAB (Google Play Console)
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-salon-playstore-aab
+          path: android/app/build/outputs/bundle/release/*.aab
+          retention-days: 14
